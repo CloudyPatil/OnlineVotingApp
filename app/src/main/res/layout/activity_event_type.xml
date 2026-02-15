@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_event"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Show selected branch -->
+        <TextView
+            android:id="@+id/tvBranchDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_branch"
+            android:textSize="16sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Instruction -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/event_instruction"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp" />
+
+        <!-- CheckBox 1: Sports -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <CheckBox
+                android:id="@+id/cbSports"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/event_sports"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:buttonTint="@color/primary" />
+        </LinearLayout>
+
+        <!-- CheckBox 2: Cultural -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <CheckBox
+                android:id="@+id/cbCultural"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/event_cultural"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:buttonTint="@color/primary" />
+        </LinearLayout>
+
+        <!-- CheckBox 3: Academic -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <CheckBox
+                android:id="@+id/cbAcademic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/event_academic"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:buttonTint="@color/primary" />
+        </LinearLayout>
+
+        <!-- CheckBox 4: Technical -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <CheckBox
+                android:id="@+id/cbTechnical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/event_technical"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:buttonTint="@color/primary" />
+        </LinearLayout>
+
+        <!-- CheckBox 5: Literary -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_bg"
+            android:padding="16dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center_vertical">
+
+            <CheckBox
+                android:id="@+id/cbLiterary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/event_literary"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:buttonTint="@color/primary" />
+        </LinearLayout>
+
+        <!-- ListView Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/event_list_title"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginBottom="8dp" />
+
+        <ListView
+            android:id="@+id/listViewEvents"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/card_bg"
+            android:divider="@color/divider"
+            android:dividerHeight="1dp"
+            android:padding="4dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- View Candidates Button -->
+        <Button
+            android:id="@+id/btnViewCandidates"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="@string/btn_view_candidates"
+            android:background="@drawable/btn_rounded"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+    </LinearLayout>
+</ScrollView>

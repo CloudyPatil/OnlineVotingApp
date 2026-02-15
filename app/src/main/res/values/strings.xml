@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Online Voting App</string>
+    <string name="college_name">VPM\'s Polytechnic, Thane</string>
+    <string name="splash_title">Online Voting System</string>
+    <string name="splash_subtitle">Your Vote, Your Voice</string>
+
+    <!-- Splash countdown -->
+    <string name="countdown_format">Starting in %d…</string>
+    <string name="countdown_go">Let\'s Go!</string>
+
+    <!-- Sign Up Screen -->
+    <string name="create_account">Create Account</string>
+    <string name="register_subtitle">Register to cast your vote</string>
+    <string name="label_fullname">Full Name</string>
+    <string name="label_username">Username</string>
+    <string name="label_password">Password</string>
+    <string name="label_dob">Date of Birth</string>
+    <string name="label_voting_time">Preferred Voting Time</string>
+    <string name="hint_fullname">Full Name</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="no_date_selected">No date selected</string>
+    <string name="no_time_selected">No time selected</string>
+    <string name="btn_pick_date">📅 Pick</string>
+    <string name="btn_pick_time">🕐 Pick</string>
+    <string name="btn_signup">SIGN UP</string>
+    <string name="already_account">Already have an account? Login</string>
+
+    <!-- Sign Up Validation -->
+    <string name="error_enter_fullname">Enter your full name</string>
+    <string name="error_enter_username">Enter a username</string>
+    <string name="error_enter_password">Enter a password</string>
+    <string name="error_password_short">Password must be at least 4 characters</string>
+    <string name="error_select_dob">Please select your date of birth</string>
+    <string name="error_select_time">Please select preferred voting time</string>
+    <string name="error_username_exists">Username already exists! Choose another.</string>
+    <string name="signup_success">Account Created Successfully!\nWelcome, %s</string>
+
+    <!-- Login Screen -->
+    <string name="welcome_back">Welcome Back</string>
+    <string name="login_subtitle">Login to access voting</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="new_user">New User? Sign Up</string>
+    <string name="toggle_show_password">🔒 Show Password</string>
+    <string name="toggle_hide_password">🔓 Hide Password</string>
+    <string name="toggle_loud">🔊 Loud</string>
+    <string name="toggle_silent">🔇 Silent</string>
+    <string name="label_sound_mode">🔊 Sound Mode:</string>
+    <string name="label_airplane_mode">✈️ Airplane Mode:</string>
+    <string name="label_device_settings">Device Settings</string>
+    <string name="checking">Checking…</string>
+
+    <!-- Login Validation -->
+    <string name="error_enter_login_username">Enter username</string>
+    <string name="error_enter_login_password">Enter password</string>
+    <string name="login_success">✅ Login Successful!\nWelcome, %s</string>
+    <string name="login_failed">❌ Invalid Credentials!\nPlease check username and password.</string>
+    <string name="sound_loud">🔊 Sound Mode: LOUD</string>
+    <string name="sound_silent">🔇 Sound Mode: SILENT</string>
+    <string name="airplane_on">ON ⚠️</string>
+    <string name="airplane_off">OFF ✅</string>
+    <string name="airplane_mode_on_toast">✈️ Airplane Mode is ON\nInternet connectivity may be affected!</string>
+    <string name="airplane_mode_off_toast">✈️ Airplane Mode is OFF\nYou are connected!</string>
+    <string name="dnd_permission_needed">Please grant Do Not Disturb permission to change sound mode</string>
+    <string name="sound_vibrate">📳 Sound Mode: VIBRATE (Silent needs DND permission)</string>
+
+    <!-- Branch Selection -->
+    <string name="select_branch">Select Your Branch</string>
+    <string name="welcome_user">Welcome, %s!</string>
+    <string name="label_choose_branch">Choose your branch:</string>
+    <string name="label_selected">Selected:\u0020</string>
+    <string name="none_selected">None</string>
+    <string name="btn_proceed">PROCEED</string>
+    <string name="error_select_branch">Please select a branch to proceed!</string>
+    <string name="branch_selection_title">Branch Selection</string>
+    <string name="branch_display">Branch: %s</string>
+
+    <!-- Event Type -->
+    <string name="select_event">Select Event Type</string>
+    <string name="event_instruction">Select one or more event types to vote in:</string>
+    <string name="event_sports">🏅 Sports</string>
+    <string name="event_cultural">🎭 Cultural</string>
+    <string name="event_academic">📚 Academic</string>
+    <string name="event_technical">💻 Technical</string>
+    <string name="event_literary">📖 Literary</string>
+    <string name="event_list_title">Event Types (ListView Display):</string>
+    <string name="btn_view_candidates">VIEW CANDIDATES</string>
+    <string name="error_select_event">⚠️ Please select at least one event type!</string>
+    <string name="event_info">ℹ️ %s events include various competitions</string>
+    <string name="selected_events">Selected: %s</string>
+
+    <!-- Candidate Voting -->
+    <string name="vote_candidate">Vote for Your Candidate</string>
+    <string name="vote_info_format">Branch: %1$s | Events: %2$s</string>
+    <string name="vote_instructions">Tap on a candidate photo for details.\nSelect one candidate using the radio button.</string>
+    <string name="gridview_title">📋 All Candidates (GridView Display):</string>
+    <string name="btn_submit_vote">SUBMIT VOTE</string>
+    <string name="label_vote">Vote</string>
+    <string name="error_select_candidate">⚠️ Please select a candidate before submitting!</string>
+    <string name="candidate_detail">📌 %1$s\n%2$s</string>
+    <string name="candidate_info">ℹ️ %1$s - %2$s</string>
+
+    <!-- Candidate Names -->
+    <string name="candidate_1_name">Rahul Sharma</string>
+    <string name="candidate_1_desc">Sports Captain, 3rd Year</string>
+    <string name="candidate_2_name">Priya Patel</string>
+    <string name="candidate_2_desc">Cultural Secretary, 2nd Year</string>
+    <string name="candidate_3_name">Amit Kumar</string>
+    <string name="candidate_3_desc">Tech Lead, 3rd Year</string>
+    <string name="candidate_4_name">Sneha Desai</string>
+    <string name="candidate_4_desc">Academic Topper, 2nd Year</string>
+
+    <!-- Confirmation Screen -->
+    <string name="vote_confirmation">Vote Confirmation</string>
+    <string name="confirmation_info">Candidate: %1$s\nBranch: %2$s\nEvents: %3$s</string>
+    <string name="vote_details_title">📋 Your Vote Details</string>
+    <string name="label_voter">Voter:\u0020\u0020\u0020\u0020\u0020\u0020</string>
+    <string name="label_branch">Branch:\u0020\u0020\u0020\u0020</string>
+    <string name="label_events">Events:\u0020\u0020\u0020\u0020</string>
+    <string name="label_candidate">Candidate:\u0020</string>
+    <string name="default_voter">Voter</string>
+    <string name="default_na">N/A</string>
+
+    <!-- Vote Converter -->
+    <string name="converter_title">📊 Vote Converter</string>
+    <string name="converter_subtitle">Converting your vote to percentage:</string>
+    <string name="converter_calculating">Calculating…</string>
+    <string name="converter_result">Your Vote = %1$d/%2$d = %3$.2f%%</string>
+    <string name="converter_detail">Conversion Formula:\nPercentage = (Your Votes ÷ Total Voters) × 100\nPercentage = (%1$d ÷ %2$d) × 100\nPercentage = %3$.4f%%\n\nTotal Registered Voters: %2$d\nYour Contribution: %3$.2f%% of total votes</string>
+
+    <!-- Progress and Countdown -->
+    <string name="submitting_title">⏳ Submitting Your Vote…</string>
+    <string name="progress_zero">0%%</string>
+    <string name="progress_format">%d%%</string>
+    <string name="progress_complete">100%% — Complete!</string>
+    <string name="countdown_confirm_format">Confirming in %d…</string>
+    <string name="countdown_done">✅ Done!</string>
+    <string name="vote_success_message">✅ Vote Submitted Successfully!</string>
+    <string name="vote_success_toast">🎉 Your vote has been submitted successfully!</string>
+
+    <!-- Buttons -->
+    <string name="btn_visit_website">Visit College Website</string>
+    <string name="btn_exit">EXIT APP</string>
+    <string name="college_website">https://www.vpm.edu.in</string>
+    <string name="no_browser">No browser found to open the website!</string>
+    <string name="thank_you">Thank you for voting! 🗳️</string>
+    <string name="vote_already_submitted">Vote already submitted. Use Exit button to close.</string>
+</resources>

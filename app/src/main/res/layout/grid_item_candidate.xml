@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/candidate_border"
+    android:gravity="center_horizontal"
+    android:padding="12dp">
+
+    <!-- Candidate Photo -->
+    <ImageView
+        android:id="@+id/imgGridCandidate"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_candidate"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/vote_candidate"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Candidate Name -->
+    <TextView
+        android:id="@+id/tvGridCandidateName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/candidate_1_name"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Candidate Description -->
+    <TextView
+        android:id="@+id/tvGridCandidateDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/candidate_1_desc"
+        android:textSize="11sp"
+        android:textColor="@color/text_secondary"
+        android:gravity="center" />
+
+</LinearLayout>

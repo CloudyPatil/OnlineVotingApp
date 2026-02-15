@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="branches">
+        <item>Select Branch…</item>
+        <item>Computer Engineering</item>
+        <item>Information Technology</item>
+        <item>Mechanical Engineering</item>
+        <item>Civil Engineering</item>
+        <item>Electrical Engineering</item>
+    </string-array>
+
+    <string-array name="event_types">
+        <item>Sports</item>
+        <item>Cultural</item>
+        <item>Academic</item>
+        <item>Technical</item>
+        <item>Literary</item>
+    </string-array>
+</resources>
