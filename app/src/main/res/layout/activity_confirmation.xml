@@ -253,13 +253,13 @@
             android:id="@+id/btnVisitWebsite"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:text="@string/btn_visit_website"
+            android:layout_marginBottom="12dp"
             android:background="@drawable/btn_primary"
+            android:text="@string/btn_visit_website"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:visibility="gone"
-            android:layout_marginBottom="12dp" />
+            android:visibility="gone" />
 
         <!-- Exit Button (hidden initially) -->
         <Button

@@ -3,7 +3,6 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -19,19 +18,11 @@ import com.google.firebase.database.MutableData;
 import com.google.firebase.database.Transaction;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class CandidateVoteActivity extends AppCompatActivity {
 
     private TextView tvVoteInfo;
     private ImageButton imgBtn1, imgBtn2, imgBtn3, imgBtn4;
     private RadioButton rb1, rb2, rb3, rb4;
-    private TextView tvVoteCount1, tvVoteCount2, tvVoteCount3, tvVoteCount4;
-    private GridView gridViewCandidates;
     private Button btnSubmitVote;
 
     private String branch = "";
@@ -40,12 +31,8 @@ public class CandidateVoteActivity extends AppCompatActivity {
 
     private String[] candidateNames;
     private String[] candidateDescs;
-    private final int[] candidateImages = {
-            R.drawable.ic_candidate, R.drawable.ic_candidate,
-            R.drawable.ic_candidate, R.drawable.ic_candidate
-    };
 
-    // Map candidate key (no spaces) to index
+    // Candidate keys in Firebase (no spaces)
     private final String[] candidateKeys = {"RahulSharma", "PriyaPatel", "AmitKumar", "SnehaDesai"};
 
     @Override
@@ -53,6 +40,7 @@ public class CandidateVoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_candidate_vote);
 
+        // Load candidate names from strings
         candidateNames = new String[]{
                 getString(R.string.candidate_1_name),
                 getString(R.string.candidate_2_name),
@@ -76,11 +64,6 @@ public class CandidateVoteActivity extends AppCompatActivity {
         rb2 = findViewById(R.id.rb2);
         rb3 = findViewById(R.id.rb3);
         rb4 = findViewById(R.id.rb4);
-        tvVoteCount1 = findViewById(R.id.tvVoteCount1);
-        tvVoteCount2 = findViewById(R.id.tvVoteCount2);
-        tvVoteCount3 = findViewById(R.id.tvVoteCount3);
-        tvVoteCount4 = findViewById(R.id.tvVoteCount4);
-        gridViewCandidates = findViewById(R.id.gridViewCandidates);
         btnSubmitVote = findViewById(R.id.btnSubmitVote);
 
         // Get data from previous screen
@@ -104,9 +87,6 @@ public class CandidateVoteActivity extends AppCompatActivity {
         imgBtn3.setOnClickListener(v -> Toast.makeText(this, getString(R.string.candidate_detail, candidateNames[2], candidateDescs[2]), Toast.LENGTH_SHORT).show());
         imgBtn4.setOnClickListener(v -> Toast.makeText(this, getString(R.string.candidate_detail, candidateNames[3], candidateDescs[3]), Toast.LENGTH_SHORT).show());
 
-        // Load LIVE vote counts from Firebase
-        loadLiveVoteCounts();
-
         // Check if user already voted
         checkIfAlreadyVoted();
 
@@ -126,58 +106,6 @@ public class CandidateVoteActivity extends AppCompatActivity {
             }
 
             submitVoteToFirebase(selectedCandidate, selectedIndex);
-        });
-    }
-
-    private void loadLiveVoteCounts() {
-        DatabaseReference db = FirebaseDatabase.getInstance().getReference("candidates");
-        db.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                // Map to store vote counts by candidate name
-                Map<String, Integer> voteMap = new HashMap<>();
-                List<Candidate> candidateList = new ArrayList<>();
-
-                for (DataSnapshot child : snapshot.getChildren()) {
-                    Candidate c = child.getValue(Candidate.class);
-                    if (c != null) {
-                        voteMap.put(c.name, c.voteCount);
-                        candidateList.add(c);
-                    }
-                }
-
-                // Update vote counts in GridLayout
-                tvVoteCount1.setText(voteMap.getOrDefault(candidateNames[0], 0) + " votes");
-                tvVoteCount2.setText(voteMap.getOrDefault(candidateNames[1], 0) + " votes");
-                tvVoteCount3.setText(voteMap.getOrDefault(candidateNames[2], 0) + " votes");
-                tvVoteCount4.setText(voteMap.getOrDefault(candidateNames[3], 0) + " votes");
-
-                // Sort candidates by votes (highest first) for GridView
-                Collections.sort(candidateList, (a, b) -> b.voteCount - a.voteCount);
-
-                // Build sorted arrays for GridView adapter
-                String[] sortedNames = new String[candidateList.size()];
-                String[] sortedDescs = new String[candidateList.size()];
-                int[] sortedVotes = new int[candidateList.size()];
-                int[] sortedImages = new int[candidateList.size()];
-
-                for (int i = 0; i < candidateList.size(); i++) {
-                    sortedNames[i] = candidateList.get(i).name;
-                    sortedDescs[i] = candidateList.get(i).description;
-                    sortedVotes[i] = candidateList.get(i).voteCount;
-                    sortedImages[i] = R.drawable.ic_candidate;
-                }
-
-                // Update GridView with ranked candidates
-                CandidateAdapter adapter = new CandidateAdapter(
-                        CandidateVoteActivity.this,
-                        sortedNames, sortedDescs, sortedImages, sortedVotes);
-                gridViewCandidates.setAdapter(adapter);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-            }
         });
     }
 
@@ -227,7 +155,7 @@ public class CandidateVoteActivity extends AppCompatActivity {
                 db.child("users").child(username).child("hasVoted").setValue(true);
                 db.child("users").child(username).child("votedFor").setValue(candidateName);
 
-                // 2. Increment candidate vote count using transaction (atomic)
+                // 2. Increment candidate vote count (atomic transaction)
                 db.child("candidates").child(candidateKey).child("voteCount")
                         .runTransaction(new Transaction.Handler() {
                             @Override

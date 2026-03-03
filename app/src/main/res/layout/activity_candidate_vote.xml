@@ -37,7 +37,7 @@
             android:textColor="@color/text_secondary"
             android:layout_marginBottom="16dp" />
 
-        <!-- 2x2 Candidate Grid -->
+        <!-- 2x2 Candidate Grid — NO vote counts shown -->
         <GridLayout
             android:id="@+id/gridLayoutCandidates"
             android:layout_width="match_parent"
@@ -47,7 +47,7 @@
             android:alignmentMode="alignMargins"
             android:columnOrderPreserved="false"
             android:useDefaultMargins="true"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="16dp">
 
             <!-- CANDIDATE 1 -->
             <LinearLayout
@@ -84,16 +84,7 @@
                     android:textSize="11sp"
                     android:textColor="@color/text_secondary"
                     android:gravity="center"
-                    android:layout_marginBottom="4dp" />
-                <TextView
-                    android:id="@+id/tvVoteCount1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/zero_votes"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/accent"
-                    android:layout_marginBottom="4dp" />
+                    android:layout_marginBottom="8dp" />
                 <RadioButton
                     android:id="@+id/rb1"
                     android:layout_width="wrap_content"
@@ -138,16 +129,7 @@
                     android:textSize="11sp"
                     android:textColor="@color/text_secondary"
                     android:gravity="center"
-                    android:layout_marginBottom="4dp" />
-                <TextView
-                    android:id="@+id/tvVoteCount2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/zero_votes"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/accent"
-                    android:layout_marginBottom="4dp" />
+                    android:layout_marginBottom="8dp" />
                 <RadioButton
                     android:id="@+id/rb2"
                     android:layout_width="wrap_content"
@@ -192,16 +174,7 @@
                     android:textSize="11sp"
                     android:textColor="@color/text_secondary"
                     android:gravity="center"
-                    android:layout_marginBottom="4dp" />
-                <TextView
-                    android:id="@+id/tvVoteCount3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/zero_votes"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/accent"
-                    android:layout_marginBottom="4dp" />
+                    android:layout_marginBottom="8dp" />
                 <RadioButton
                     android:id="@+id/rb3"
                     android:layout_width="wrap_content"
@@ -246,16 +219,7 @@
                     android:textSize="11sp"
                     android:textColor="@color/text_secondary"
                     android:gravity="center"
-                    android:layout_marginBottom="4dp" />
-                <TextView
-                    android:id="@+id/tvVoteCount4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/zero_votes"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/accent"
-                    android:layout_marginBottom="4dp" />
+                    android:layout_marginBottom="8dp" />
                 <RadioButton
                     android:id="@+id/rb4"
                     android:layout_width="wrap_content"
@@ -267,30 +231,9 @@
 
         </GridLayout>
 
-        <!-- Live Rankings Section -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/live_rankings_title"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:textColor="@color/primary"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp" />
+        <!-- NO GridView, NO vote counts, NO rankings shown to users -->
 
-        <GridView
-            android:id="@+id/gridViewCandidates"
-            android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:numColumns="2"
-            android:horizontalSpacing="8dp"
-            android:verticalSpacing="8dp"
-            android:gravity="center"
-            android:stretchMode="columnWidth"
-            android:background="@drawable/card_bg"
-            android:padding="8dp"
-            android:layout_marginBottom="16dp" />
-
+        <!-- Submit Vote Button -->
         <Button
             android:id="@+id/btnSubmitVote"
             android:layout_width="match_parent"
