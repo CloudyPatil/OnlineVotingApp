@@ -14,7 +14,6 @@
         android:theme="@style/Theme.OnlineVotingApp"
         tools:targetApi="31">
 
-        <!-- Screen 1: Splash -->
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -25,25 +24,14 @@
             </intent-filter>
         </activity>
 
-        <!-- Screen 2: Sign Up -->
         <activity android:name=".SignUpActivity" />
-
-        <!-- Screen 3: Login -->
         <activity android:name=".LoginActivity" />
-
-        <!-- Screen 4: Branch Selection -->
         <activity android:name=".BranchSelectionActivity" />
-
-        <!-- Screen 5: Event Type -->
         <activity android:name=".EventTypeActivity" />
-
-        <!-- Screen 6: Candidate Voting -->
         <activity android:name=".CandidateVoteActivity" />
-
-        <!-- Screen 7: Confirmation (placeholder) -->
         <activity android:name=".ConfirmationActivity" />
+        <activity android:name=".AdminDashboardActivity" />
 
-        <!-- BroadcastReceiver -->
         <receiver
             android:name=".AirplaneModeReceiver"
             android:exported="true">

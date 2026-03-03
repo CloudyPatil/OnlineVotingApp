@@ -7,7 +7,6 @@
     android:gravity="center_horizontal"
     android:padding="12dp">
 
-    <!-- Candidate Photo -->
     <ImageView
         android:id="@+id/imgGridCandidate"
         android:layout_width="80dp"
@@ -17,7 +16,6 @@
         android:contentDescription="@string/vote_candidate"
         android:layout_marginBottom="8dp" />
 
-    <!-- Candidate Name -->
     <TextView
         android:id="@+id/tvGridCandidateName"
         android:layout_width="wrap_content"
@@ -29,7 +27,6 @@
         android:gravity="center"
         android:layout_marginBottom="4dp" />
 
-    <!-- Candidate Description -->
     <TextView
         android:id="@+id/tvGridCandidateDesc"
         android:layout_width="wrap_content"
@@ -37,6 +34,18 @@
         android:text="@string/candidate_1_desc"
         android:textSize="11sp"
         android:textColor="@color/text_secondary"
+        android:gravity="center"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Vote count display -->
+    <TextView
+        android:id="@+id/tvGridVoteCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero_votes"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/accent"
         android:gravity="center" />
 
 </LinearLayout>

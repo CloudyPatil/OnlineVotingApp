@@ -146,4 +146,24 @@
     <string name="no_browser">No browser found to open the website!</string>
     <string name="thank_you">Thank you for voting! 🗳️</string>
     <string name="vote_already_submitted">Vote already submitted. Use Exit button to close.</string>
+
+
+    <!-- Firebase -->
+    <string name="firebase_error">Database error. Please check your connection.</string>
+
+    <!-- Admin Dashboard -->
+    <string name="admin_dashboard_title">🛡️ Admin Dashboard</string>
+    <string name="admin_subtitle">Real-time voting statistics</string>
+    <string name="total_votes_label">Total Votes Cast</string>
+    <string name="rankings_title">🏆 Candidate Rankings</string>
+    <string name="voter_log_title">📋 Voter Log (Who Voted For Whom)</string>
+    <string name="no_votes_yet">No votes cast yet.</string>
+    <string name="btn_logout">LOGOUT</string>
+
+    <!-- Voting -->
+    <string name="already_voted_message">⚠️ You have already voted! Each user can only vote once.</string>
+    <string name="already_voted_button">ALREADY VOTED</string>
+    <string name="zero_votes">0 votes</string>
+    <string name="live_rankings_title">🏆 Live Rankings (Sorted by Votes):</string>
 </resources>
+

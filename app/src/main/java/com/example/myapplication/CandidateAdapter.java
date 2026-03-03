@@ -10,19 +10,20 @@ import android.widget.TextView;
 
 public class CandidateAdapter extends BaseAdapter {
 
-    // Data
     private final Context context;
     private final String[] candidateNames;
     private final String[] candidateDescs;
     private final int[] candidateImages;
+    private final int[] voteCounts;
 
-    // Constructor
     public CandidateAdapter(Context context, String[] candidateNames,
-                            String[] candidateDescs, int[] candidateImages) {
+                            String[] candidateDescs, int[] candidateImages,
+                            int[] voteCounts) {
         this.context = context;
         this.candidateNames = candidateNames;
         this.candidateDescs = candidateDescs;
         this.candidateImages = candidateImages;
+        this.voteCounts = voteCounts;
     }
 
     @Override
@@ -42,21 +43,20 @@ public class CandidateAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // Create view if not recycled
         if (convertView == null) {
-            LayoutInflater inflater = LayoutInflater.from(context);
-            convertView = inflater.inflate(R.layout.grid_item_candidate, parent, false);
+            convertView = LayoutInflater.from(context)
+                    .inflate(R.layout.grid_item_candidate, parent, false);
         }
 
-        // Find views inside grid_item_candidate.xml
         ImageView imgCandidate = convertView.findViewById(R.id.imgGridCandidate);
         TextView tvName = convertView.findViewById(R.id.tvGridCandidateName);
         TextView tvDesc = convertView.findViewById(R.id.tvGridCandidateDesc);
+        TextView tvVotes = convertView.findViewById(R.id.tvGridVoteCount);
 
-        // Set data for this position
         imgCandidate.setImageResource(candidateImages[position]);
         tvName.setText(candidateNames[position]);
         tvDesc.setText(candidateDescs[position]);
+        tvVotes.setText(voteCounts[position] + " votes");
 
         return convertView;
     }

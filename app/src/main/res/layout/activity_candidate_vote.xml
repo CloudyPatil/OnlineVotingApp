@@ -11,7 +11,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Header -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,7 +20,6 @@
             android:textColor="@color/primary"
             android:layout_marginBottom="4dp" />
 
-        <!-- Info Display -->
         <TextView
             android:id="@+id/tvVoteInfo"
             android:layout_width="wrap_content"
@@ -31,7 +29,6 @@
             android:textColor="@color/text_secondary"
             android:layout_marginBottom="16dp" />
 
-        <!-- Instructions -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -40,7 +37,7 @@
             android:textColor="@color/text_secondary"
             android:layout_marginBottom="16dp" />
 
-        <!-- GridLayout with 4 Candidates in 2x2 grid -->
+        <!-- 2x2 Candidate Grid -->
         <GridLayout
             android:id="@+id/gridLayoutCandidates"
             android:layout_width="match_parent"
@@ -72,7 +69,6 @@
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/candidate_1_name"
                     android:layout_marginBottom="8dp" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -81,7 +77,6 @@
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:gravity="center" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -89,8 +84,16 @@
                     android:textSize="11sp"
                     android:textColor="@color/text_secondary"
                     android:gravity="center"
-                    android:layout_marginBottom="8dp" />
-
+                    android:layout_marginBottom="4dp" />
+                <TextView
+                    android:id="@+id/tvVoteCount1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zero_votes"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/accent"
+                    android:layout_marginBottom="4dp" />
                 <RadioButton
                     android:id="@+id/rb1"
                     android:layout_width="wrap_content"
@@ -120,7 +123,6 @@
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/candidate_2_name"
                     android:layout_marginBottom="8dp" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -129,7 +131,6 @@
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:gravity="center" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -137,8 +138,16 @@
                     android:textSize="11sp"
                     android:textColor="@color/text_secondary"
                     android:gravity="center"
-                    android:layout_marginBottom="8dp" />
-
+                    android:layout_marginBottom="4dp" />
+                <TextView
+                    android:id="@+id/tvVoteCount2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zero_votes"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/accent"
+                    android:layout_marginBottom="4dp" />
                 <RadioButton
                     android:id="@+id/rb2"
                     android:layout_width="wrap_content"
@@ -168,7 +177,6 @@
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/candidate_3_name"
                     android:layout_marginBottom="8dp" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -177,7 +185,6 @@
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:gravity="center" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -185,8 +192,16 @@
                     android:textSize="11sp"
                     android:textColor="@color/text_secondary"
                     android:gravity="center"
-                    android:layout_marginBottom="8dp" />
-
+                    android:layout_marginBottom="4dp" />
+                <TextView
+                    android:id="@+id/tvVoteCount3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zero_votes"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/accent"
+                    android:layout_marginBottom="4dp" />
                 <RadioButton
                     android:id="@+id/rb3"
                     android:layout_width="wrap_content"
@@ -216,7 +231,6 @@
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/candidate_4_name"
                     android:layout_marginBottom="8dp" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -225,7 +239,6 @@
                     android:textStyle="bold"
                     android:textColor="@color/black"
                     android:gravity="center" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -233,8 +246,16 @@
                     android:textSize="11sp"
                     android:textColor="@color/text_secondary"
                     android:gravity="center"
-                    android:layout_marginBottom="8dp" />
-
+                    android:layout_marginBottom="4dp" />
+                <TextView
+                    android:id="@+id/tvVoteCount4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/zero_votes"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/accent"
+                    android:layout_marginBottom="4dp" />
                 <RadioButton
                     android:id="@+id/rb4"
                     android:layout_width="wrap_content"
@@ -246,13 +267,14 @@
 
         </GridLayout>
 
-        <!-- GridView Section -->
+        <!-- Live Rankings Section -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/gridview_title"
+            android:text="@string/live_rankings_title"
             android:textSize="14sp"
-            android:textColor="@color/text_secondary"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp" />
 
@@ -269,7 +291,6 @@
             android:padding="8dp"
             android:layout_marginBottom="16dp" />
 
-        <!-- Submit Vote Button -->
         <Button
             android:id="@+id/btnSubmitVote"
             android:layout_width="match_parent"
